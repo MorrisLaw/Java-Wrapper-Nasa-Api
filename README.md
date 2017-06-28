@@ -7,14 +7,18 @@ This is a Java wrapper for NASA's open API.
 In order to utilize or contribute to this API wrapper, you first need to retrieve an API key. Follow the instructions at this link to get your API key. Once you have your API key, I recommend exporting it as an environment variable.
 
 Recommended API Key storage options:
-* To permanently store your API key, open up a terminal window. Using the text editor of your choosing, open your ~/.bashrc file. Type the following, somewhere inside your ~/.bashrc file:
 
-```export NASA_API_KEY=<your_nasa_key>```
+* Option 1. Store as environment variable.
 
+To permanently store your API key, open up a terminal window. Using the text editor of your choosing, open your ~/.bashrc file. Type the following, somewhere inside your ~/.bashrc file:
+
+```export NASA_API_KEY=<your_nasa_key>``` 
 Save the file. Then when back in the shell, source your ~/.bashrc file:
 
 ```source ~/.bashrc```
 
-* To temporarily store your API key in your current shell session, simply type into the terminal:
+* Option 2. Store in current shell session.
+
+To temporarily store your API key in your current shell session, simply type into the terminal:
 
 ```export NASA_API_KEY=<your_nasa_key>```
