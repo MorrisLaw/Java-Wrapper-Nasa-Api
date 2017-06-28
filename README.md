@@ -36,5 +36,5 @@ To temporarily store your API key in your current shell session, simply type int
 ***/0\/0\ In Progress***
 
 ## Credits
-(Jeremy L. Morris)[jeremylevanmorris@gmail.com]
+[Jeremy L. Morris](jeremylevanmorris@gmail.com)
 
