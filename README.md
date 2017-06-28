@@ -23,3 +23,9 @@ Save the file. Then when back in the shell, source your ~/.bashrc file:
 To temporarily store your API key in your current shell session, simply type into the terminal:
 
 ```export NASA_API_KEY=<your_nasa_key>```
+
+* ### Using the API Wrapper
+/0\/0\ In Progress
+
+* ### Contributing
+/0\/0\ In Progress
