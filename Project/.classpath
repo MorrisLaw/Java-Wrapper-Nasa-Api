@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="/home/jeremy/Desktop/httpcomponents-client-4.5.3/lib/httpmime-4.5.3.jar"/>
 	<classpathentry kind="lib" path="/home/jeremy/Desktop/httpcomponents-client-4.5.3/lib/jna-4.1.0.jar"/>
 	<classpathentry kind="lib" path="/home/jeremy/Desktop/httpcomponents-client-4.5.3/lib/jna-platform-4.1.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
