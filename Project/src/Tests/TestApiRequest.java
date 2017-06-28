@@ -8,6 +8,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import nasa.ApiRequest;
+
 public class TestApiRequest {
 
 	@BeforeClass
@@ -25,10 +27,12 @@ public class TestApiRequest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
-	@Test
-	public void test() {
-		fail("Not yet implemented");
+	
+	@Test public void TestGetApiKey() {
+		String envKey = System.getenv("NASA_API_KEY");
+		String apiKey = nasa.ApiRequest.apiKey;
+		assertEquals(apiKey, envKey);
 	}
+	
 
 }
