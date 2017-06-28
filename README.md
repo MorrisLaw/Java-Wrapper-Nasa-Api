@@ -1,7 +1,12 @@
 # Java-Wrapper-Nasa-Api
+
+## Description
 This is a Java wrapper for NASA's open API. 
 
 ***Note:*** I am using Ubuntu 16.04 to develop this API wrapper, and any instructions listed in this README have only been verified on Ubuntu 16.04. I can not guarantee the success of said instructions on other operating systems. Sorry for any inconvenience.
+
+## Installation
+***/0\/0\ In Progress***
 
 ## Getting Started 
 * ### API Key
@@ -24,8 +29,12 @@ To temporarily store your API key in your current shell session, simply type int
 
 ```export NASA_API_KEY=<your_nasa_key>```
 
-* ### Using the API Wrapper
-/0\/0\ In Progress
+## Usage
+***/0\/0\ In Progress***
 
-* ### Contributing
-/0\/0\ In Progress
+## Contributing
+***/0\/0\ In Progress***
+
+## Credits
+(Jeremy L. Morris)[jeremylevanmorris@gmail.com]
+
