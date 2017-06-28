@@ -5,7 +5,7 @@ This is a Java wrapper for NASA's open API.
 
 ## Getting Started 
 * ### API Key
-In order to utilize or contribute to this API wrapper, you first need to retrieve an API key. Follow the instructions at this link to get your API key. Once you have your API key, I recommend exporting it as an environment variable.
+In order to utilize or contribute to this API wrapper, you first need to retrieve an API key. Follow the instructions at this [link](https://api.nasa.gov/index.html#apply-for-an-api-key) get your API key. Once you have your API key, I recommend exporting it as an environment variable.
 
 #### Recommended API Key storage options:
 
