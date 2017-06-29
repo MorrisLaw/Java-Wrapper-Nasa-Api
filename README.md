@@ -7,13 +7,13 @@ This is a Java wrapper for NASA's open API.
 
 ## Installation
 
-#### Install Dependencies.
+### Install Dependencies.
 Go to this [link](http://apache.mirror.colo-serv.net//httpcomponents/httpclient/binary/httpcomponents-client-4.5.3-bin.tar.gz) to install Apache HTTPComponents 4.5.3 binary tar.gz.
 
-* macOS Sierra v10.12.3: 
+**macOS Sierra v10.12.3:** 
 Steps to importing this library into eclipse.
-1. - When downloading this link, once it finishes use "Show in Finder" to find where it has downloaded onto your system. Double click the file to extract it. 
-2. - Open up Java-Wrapper-Nasa-Api in eclipse. Then add dependencies to project by including the following in your `pom.xml` file:
+- When downloading this link, once it finishes use "Show in Finder" to find where it has downloaded onto your system. Double click the file to extract it. 
+- Open up Java-Wrapper-Nasa-Api in eclipse. Then add dependencies to project by including the following in your `pom.xml` file:
 
 ```
 <dependency>
@@ -23,10 +23,12 @@ Steps to importing this library into eclipse.
 </dependency>
 ```
 
-* Ubuntu 16.04:
+**Ubuntu 16.04:**
+
 
 ## Getting Started 
-* ### API Key
+
+### API Key
 In order to utilize or contribute to this API wrapper, you first need to retrieve an API key. Follow the instructions at this [link](https://api.nasa.gov/index.html#apply-for-an-api-key) get your API key. Once you have your API key, I recommend exporting it as an environment variable.
 
 #### Recommended API Key storage options:
@@ -47,12 +49,13 @@ To temporarily store your API key in your current shell session, simply type int
 ```export NASA_API_KEY=<your_nasa_key>```
 
 ## Usage
-**~In Progress~**
+**In Progress**
 
 ## Contributing
-#### Fork and Clone this Project.
-* Use the fork button located at the top right of this page.
-* then clone the repository, by typing the following into your terminal, into the directory of your choosing:
+
+### Fork and Clone this Project.
+- Use the fork button located at the top right of this page.
+- then clone the repository, by typing the following into your terminal, into the directory of your choosing:
 
 ```git clone https://github.com/MorrisLaw/Java-Wrapper-Nasa-Api.git```
 
