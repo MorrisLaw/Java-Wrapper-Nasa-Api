@@ -48,6 +48,7 @@ To temporarily store your API key in your current shell session, simply type int
 #### Fork and Clone this Project.
 * Use the fork button located at the top right of this page.
 * then clone the repository, by typing the following into your terminal, into the directory of your choosing:
+
 ```git clone https://github.com/MorrisLaw/Java-Wrapper-Nasa-Api.git```
 
 ## Credits
