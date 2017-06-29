@@ -13,10 +13,15 @@ Go to this [link](http://apache.mirror.colo-serv.net//httpcomponents/httpclient/
 * macOS Sierra v10.12.3: 
 Steps to importing this library into eclipse.
 1. - When downloading this link, once it finishes use "Show in Finder" to find where it has downloaded onto your system. Double click the file to extract it. 
-2. - Open up Java-Wrapper-Nasa-Api in eclipse. Then right click on Project and select "Add External Archives..."
-3. - It should open the directory where your Apache jar files are, if it does not you'll need to navigate to their location.
-4. - While holding down the shift button, select the jar files to be imported into eclipse.
-5. - A popup dialog box will appear saying that its building the path. Then the jar files will appear in a folder named "Referenced Libraries" located in your Project folder.
+2. - Open up Java-Wrapper-Nasa-Api in eclipse. Then add dependencies to project by including the following in your `pom.xml` file:
+
+```
+<dependency>
+  <groupId>org.apache.httpcomponents</groupId>
+  <artifactId>httpclient</artifactId>
+  <version>4.5.3</version>
+</dependency>
+```
 
 * Ubuntu 16.04:
 
