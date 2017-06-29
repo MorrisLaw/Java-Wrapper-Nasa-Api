@@ -3,10 +3,22 @@
 ## Description
 This is a Java wrapper for NASA's open API. 
 
-***Note:*** I am using Ubuntu 16.04 to develop this API wrapper, and any instructions listed in this README have only been verified on Ubuntu 16.04. I can not guarantee the success of said instructions on other operating systems. Sorry for any inconvenience.
+**Note:** This Java API Wrapper has been developed and/or tested on Ubuntu 16.04 and macOS Sierra v10.12.3. I have not tested the instructions below on any other OS. Sorry for any inconvenience. 
 
 ## Installation
-***/0\/0\ In Progress***
+
+#### Install Dependencies.
+Go to this [link](http://apache.mirror.colo-serv.net//httpcomponents/httpclient/binary/httpcomponents-client-4.5.3-bin.tar.gz) to install Apache HTTPComponents 4.5.3 binary tar.gz.
+
+* macOS Sierra v10.12.3: 
+Steps to importing this library into eclipse.
+1. - When downloading this link, once it finishes use "Show in Finder" to find where it has downloaded onto your system. Double click the file to extract it. 
+2. - Open up Java-Wrapper-Nasa-Api in eclipse. Then right click on Project and select "Add External Archives..."
+3. - It should open the directory where your Apache jar files are, if it does not you'll need to navigate to their location.
+4. - While holding down the shift button, select the jar files to be imported into eclipse.
+5. - A popup dialog box will appear saying that its building the path. Then the jar files will appear in a folder named "Referenced Libraries" located in your Project folder.
+
+* Ubuntu 16.04:
 
 ## Getting Started 
 * ### API Key
@@ -30,10 +42,10 @@ To temporarily store your API key in your current shell session, simply type int
 ```export NASA_API_KEY=<your_nasa_key>```
 
 ## Usage
-***/0\/0\ In Progress***
+**/0\/0\ In Progress**
 
 ## Contributing
-***/0\/0\ In Progress***
+**/0\/0\ In Progress**
 
 ## Credits
 Jeremy L. Morris, jeremylevanmorris@gmail.com
