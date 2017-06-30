@@ -1,5 +1,6 @@
 package tests;
 import static org.junit.Assert.*;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -35,6 +36,6 @@ public class TestApiRequest {
 	public void testGetApiKeyWrongKey() {
 		String envKey = "fake key";
 		String apiKey = System.getenv("NASA_API_KEY");
-		assertNotEquals(apiKey, envKey);
+		assertEquals(apiKey, envKey);
 	}
 }
