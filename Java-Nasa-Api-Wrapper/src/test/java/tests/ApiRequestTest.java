@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class TestApiRequest {
+public class ApiRequestTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -36,5 +36,10 @@ public class TestApiRequest {
 		String envKey = "fake key";
 		String apiKey = System.getenv("NASA_API_KEY");
 		assertNotEquals(apiKey, envKey);
+	}
+	
+	@Test
+	public void testGetApiKeyNullKet() {
+		assertNotEquals(System.getenv("NASA_API_KEY"), "");
 	}
 }
