@@ -15,19 +15,28 @@ public class ApiRequest {
 	/**
 	 * Gateway to NASA open API service(s).
 	 */
-	public static final String apiKey = System.getenv("NASA_API_KEY");
-	
+	// By default the api key is set to your environment variable.
+	public static String apiKey = null;
+	private static final String urlApiKeySuffix = "?api_key=" + GetApiKey(apiKey);
+	private static final String baseUrl = "https://api.nasa.gov";
+	// NASA services.
+	public static final String apodService = "/planetary/apod";
+	// Variable to be passed in to GetData() as a String, representing specific NASA service.
+	static String service = null;
 	/**
 	 * Returns the HTTP response in the form of JSON.
 	 * 
-	 * @param url
+	 * @param service, a String that specifies which API service is passed in to the HTTP GET request.
 	 * @return The HTTP response for the HTTP GET request.
 	 */
-	private void ApiRequest(String url) throws Exception {
+	public static String GetData(String service) throws Exception {
+		
+		// HTTP response object.
+		String responseBody = null;
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		try {
-			// Using test url.
-			HttpGet httpGet = new HttpGet("http://httpbin.org/");
+			// URL builder for the HTTP GET request.
+			HttpGet httpGet = new HttpGet(baseUrl + service + urlApiKeySuffix);
 			System.out.println("Executing request " + httpGet.getRequestLine());
 			
 			// Create a custom response handler.
@@ -45,18 +54,33 @@ public class ApiRequest {
 			    	}
 			    }
 			};
-		    String responseBody = httpClient.execute(httpGet, responseHandler);
-		    System.out.println("----------------------------------------");
-		    System.out.println(responseBody);
+		    responseBody = httpClient.execute(httpGet, responseHandler);
 		} finally {
 			httpClient.close();
 		}
+		return responseBody;
 	}
+	
 	/**
 	 * 
-	 * @return The NASA API key set in the environment variables.
+	 * @param newApiKey, a String value that the user can define as being their new Api Key as 
+	 * opposed to using the system environment variable.
 	 */
-	private String GetApiKey() {
+	public static void SetApiKey(String newApiKey) {
+		apiKey = newApiKey;
+	}
+	
+	/**
+	 * 
+	 * @param apiKey, the current String value of the apiKey being used for HTTP GET requests.
+	 * @return the current String value of apiKey as seen by this API wrapper. By default, this returns the 
+	 * system environment variable for NASA_API_KEY if it has not already been set, even if it's null. 
+	 * You can change this by setting a new NASA API key via SetApiKey(String newApiKey).
+	 */
+	public static String GetApiKey(String apiKey) {
+		if(apiKey == null || apiKey == "") {
+			apiKey = System.getenv("NASA_API_KEY");
+		}
 		return apiKey;
 	}
 	

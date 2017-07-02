@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestApiRequest" project="Project" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="Tests.TestApiRequest" time="0.001">
-    <testcase name="TestGetApiKey" classname="Tests.TestApiRequest" time="0.001"/>
-  </testsuite>
-</testrun>
