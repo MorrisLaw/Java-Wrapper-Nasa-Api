@@ -1,23 +1,26 @@
-//package services;
-//
-//import services.ApiRequest;
-//
-//public class Apod {
-//	/**
-//	 * Wrapper for Astronomy Picture of the Day. 
-//	 */
-//	private static String GetApod() {
-////		try {
-////			String test = "/planetary/apod";
-////			return ApiRequest(test);
-////		} catch(Exception e) {
-////			System.err.print("Error");
-////		}
-//		ApiRequest.SetService(ApiRequest.apodRequest);
-//		ApiRequest.
-//	}
-//	
+package services;
+
+import services.ApiRequest;
+
+public class Apod {
+	
+	/**
+	 * 
+	 * @param responseBody, represents the HTTP response object.
+	 * @param service, the unique identifier to be passed into the HTTP GET request String URL.
+	 */
+	public static String GetApodData(String responseBody, String service) {
+		try {
+			// String object of key value pairs.
+			responseBody = ApiRequest.GetData(service);
+		} catch(Exception e) {
+			System.err.println(e);
+		}
+		return responseBody;
+	}
 //	public static void main(String[] args) {
-//		System.out.println(GetApod());
-//	}
+//	String responseBody = null;
+//	String service = ApiRequest.apodService;
+//	System.out.println(GetApodData(responseBody, service));
 //}
+}

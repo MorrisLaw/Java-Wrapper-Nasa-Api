@@ -17,23 +17,24 @@ public class ApiRequest {
 	 */
 	public static final String apiKey = System.getenv("NASA_API_KEY");
 	private static final String urlApiKeySuffix = "?api_key=" + apiKey;
-	public static final String baseUrl = "https://api.nasa.gov";
-	// Nasa service specific url parts.
-	public static final String apodRequest = "/planetary/apod";
-//	public static String responseBody = null;
-	public static String service = null;
+	private static final String baseUrl = "https://api.nasa.gov";
+	// NASA services.
+	public static final String apodService = "/planetary/apod";
+	// Variable to be passed in to GetData() as a String, representing specific NASA service.
+	static String service = null;
 	/**
 	 * Returns the HTTP response in the form of JSON.
 	 * 
-	 * @param url
+	 * @param service, a String that specifies which API service is passed in to the HTTP GET request.
 	 * @return The HTTP response for the HTTP GET request.
 	 */
-	public static String ApiRequest(String service) throws Exception {
+	public static String GetData(String service) throws Exception {
 		
+		// HTTP response object.
 		String responseBody = null;
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		try {
-			// Using test url.
+			// URL builder for the HTTP GET request.
 			HttpGet httpGet = new HttpGet(baseUrl + service + urlApiKeySuffix);
 			System.out.println("Executing request " + httpGet.getRequestLine());
 			
@@ -53,36 +54,13 @@ public class ApiRequest {
 			    }
 			};
 		    responseBody = httpClient.execute(httpGet, responseHandler);
-//		    System.out.println("----------------------------------------");
-//		    System.out.println(responseBody);
 		} finally {
 			httpClient.close();
 		}
 		return responseBody;
 	}
 	
-	/**
-	 * 
-	 * @param responseBody
-	 * @return HTTP Response if not null, otherwise throw NullPointerException and return null.
-	 */
-//	public String GetResponse(String responseBody) {
-//		try {
-//			String result = responseBody;
-//			return result;
-//		} catch(NullPointerException e) {
-//			System.err.println(e);
-//		}
-//		return null;
-//	}
-	
-	public static void main(String[] args) {
-		String httpResponse = null;
-		try {
-			httpResponse = ApiRequest.ApiRequest(apodRequest);
-		} catch(Exception e) {
-			System.err.println(e);
-		}
-		System.out.println(httpResponse);
+	public static String GetApiKey(String apiKey) {
+		return apiKey;
 	}
 }

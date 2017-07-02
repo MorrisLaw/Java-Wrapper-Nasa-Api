@@ -25,21 +25,22 @@ public class ApiRequestTest {
 	}
 
 	@Test
-	public void testGetApiKey() {
-		String envKey = System.getenv("NASA_API_KEY");
-		String apiKey = services.ApiRequest.apiKey;
-		assertEquals(apiKey, envKey);
+	public void testGetApiKeyEqualsSystemEnvironmentVariable() {
+		String sysEnvKey = System.getenv("NASA_API_KEY");
+		String getApiKeyValue = services.ApiRequest.GetApiKey(sysEnvKey);
+		assertEquals(sysEnvKey, getApiKeyValue);
 	}
-	
-	@Test 
-	public void testGetApiKeyWrongKey() {
-		String envKey = "fake key";
-		String apiKey = System.getenv("NASA_API_KEY");
-		assertNotEquals(apiKey, envKey);
-	}
-	
-	@Test
-	public void testGetApiKeyNullKet() {
-		assertNotEquals(System.getenv("NASA_API_KEY"), "");
-	}
+//	
+//	@Test 
+//	public void testGetApiKeyWrongKey() {
+//		String envKey = "fake key";
+//		String apiKey = System.getenv("NASA_API_KEY");
+//		assertNotEquals(apiKey, envKey);
+//	}
+//	
+//	@Test
+//	public void testGetApiKeyNullKet() {
+//		assertNotEquals(System.getenv("NASA_API_KEY"), "");
+//	}
+//	
 }
