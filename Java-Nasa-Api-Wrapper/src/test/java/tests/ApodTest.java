@@ -8,7 +8,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import services.ApiRequest;
 import services.Apod;
 
 public class ApodTest {
@@ -30,9 +29,7 @@ public class ApodTest {
 	}
 
 	@Test
-	public void GetApodDataTest() {
-		String responseBody = null;
-		String service = ApiRequest.apodService;
-		assertNotEquals(Apod.GetApodData(responseBody, service), null);
+	public void testGetApodDataReturnsNullWhenResponseBodyIsNull() {
+		assertNotNull(Apod.GetApodData());
 	}
 }
