@@ -15,7 +15,8 @@ public class ApiRequest {
 	/**
 	 * Gateway to NASA open API service(s).
 	 */
-	public static final String apiKey = System.getenv("NASA_API_KEY");
+	// By default the api key is set to your environment variable.
+	public static String apiKey = System.getenv("NASA_API_KEY");
 	private static final String urlApiKeySuffix = "?api_key=" + apiKey;
 	private static final String baseUrl = "https://api.nasa.gov";
 	// NASA services.
@@ -60,7 +61,22 @@ public class ApiRequest {
 		return responseBody;
 	}
 	
+	/**
+	 * 
+	 * @param newApiKey, a String value that the user can define as being their new Api Key as 
+	 * opposed to using the system environment variable.
+	 */
+	public static void SetApiKey(String newApiKey) {
+		apiKey = newApiKey;
+	}
+	
+	/**
+	 * 
+	 * @param apiKey, the current String value of the apiKey being used for HTTP GET requests.
+	 * @return the current String value of apiKey as seen by this API wrapper.
+	 */
 	public static String GetApiKey(String apiKey) {
 		return apiKey;
 	}
+	
 }

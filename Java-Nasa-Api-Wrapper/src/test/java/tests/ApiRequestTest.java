@@ -1,10 +1,13 @@
 package tests;
+
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import services.ApiRequest;
 
 public class ApiRequestTest {
 
@@ -30,13 +33,14 @@ public class ApiRequestTest {
 		String getApiKeyValue = services.ApiRequest.GetApiKey(sysEnvKey);
 		assertEquals(sysEnvKey, getApiKeyValue);
 	}
-//	
-//	@Test 
-//	public void testGetApiKeyWrongKey() {
-//		String envKey = "fake key";
-//		String apiKey = System.getenv("NASA_API_KEY");
-//		assertNotEquals(apiKey, envKey);
-//	}
+	
+	@Test 
+	public void testApiRequestReturnsNullWhenApiKeyIsNull() {
+		ApiRequest.SetApiKey(null);
+		String nullApiKey = ApiRequest.GetApiKey(ApiRequest.apiKey);
+		String nullResponseBody = ApiRequest.GetData(service);
+		assertEquals(nullApiKey, envKey);
+	}
 //	
 //	@Test
 //	public void testGetApiKeyNullKet() {

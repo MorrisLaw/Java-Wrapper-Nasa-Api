@@ -19,8 +19,8 @@ public class Apod {
 		return responseBody;
 	}
 //	public static void main(String[] args) {
-//	String responseBody = null;
-//	String service = ApiRequest.apodService;
-//	System.out.println(GetApodData(responseBody, service));
-//}
+//		String responseBody = null;
+//		String service = ApiRequest.apodService;
+//		System.out.println(GetApodData(responseBody, service));
+//	}
 }
