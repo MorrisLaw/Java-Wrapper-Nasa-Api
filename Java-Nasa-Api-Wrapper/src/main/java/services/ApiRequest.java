@@ -73,7 +73,9 @@ public class ApiRequest {
 	/**
 	 * 
 	 * @param apiKey, the current String value of the apiKey being used for HTTP GET requests.
-	 * @return the current String value of apiKey as seen by this API wrapper.
+	 * @return the current String value of apiKey as seen by this API wrapper. By default, this returns the 
+	 * system environment variable for NASA_API_KEY even if it is null. You can change this by setting
+	 * a new NASA API key via SetApiKey(String newApiKey).
 	 */
 	public static String GetApiKey(String apiKey) {
 		return apiKey;

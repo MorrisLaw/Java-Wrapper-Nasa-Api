@@ -33,18 +33,20 @@ public class ApiRequestTest {
 		String getApiKeyValue = services.ApiRequest.GetApiKey(sysEnvKey);
 		assertEquals(sysEnvKey, getApiKeyValue);
 	}
-	
-	@Test 
-	public void testApiRequestReturnsNullWhenApiKeyIsNull() {
-		ApiRequest.SetApiKey(null);
-		String nullApiKey = ApiRequest.GetApiKey(ApiRequest.apiKey);
-		String nullResponseBody = ApiRequest.GetData(service);
-		assertEquals(nullApiKey, envKey);
-	}
 //	
-//	@Test
-//	public void testGetApiKeyNullKet() {
-//		assertNotEquals(System.getenv("NASA_API_KEY"), "");
+//	@Test 
+//	public void testApiRequestReturnsEnvVariableKeyByDefault() {
 //	}
-//	
-}
+	
+//	@Test 
+//	public void testApiRequestReturnsNullWhenApiKeyIsNull() {
+//		ApiRequest.SetApiKey(null);
+//		String apiRequestResponse = "Should switch to null";
+//		try {
+//			apiRequestResponse = ApiRequest.GetData(ApiRequest.apodService);
+//			assertEquals(null, apiRequestResponse);
+//		} catch(Exception e) {
+//			System.err.print(e);
+//		}
+//	}
+//}
