@@ -28,10 +28,9 @@ public class ApiRequest {
 	 * @param url
 	 * @return The HTTP response for the HTTP GET request.
 	 */
-	private void ApiRequest(String service) throws Exception {
+	public static String ApiRequest(String service) throws Exception {
 		
 		String responseBody = null;
-		service = GetService();
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		try {
 			// Using test url.
@@ -54,46 +53,36 @@ public class ApiRequest {
 			    }
 			};
 		    responseBody = httpClient.execute(httpGet, responseHandler);
-		    GetResponse(responseBody);
 //		    System.out.println("----------------------------------------");
 //		    System.out.println(responseBody);
 		} finally {
 			httpClient.close();
 		}
-	}
-	/**
-	 * 
-	 * @return Returns the Nasa API Key, found via the systems environment variables.
-	 */
-	private String GetApiKey() {
-		return apiKey;
-	}
-	
-	/**
-	 * 
-	 * @return Returns the Apod url part needed for the api request.
-	 */
-	public String Apod() {
-		return apodRequest;
-	}
-
-	/**
-	 * 
-	 * @param apiService
-	 */
-	public static void SetService(String apiService) {
-		service = apiService;
-	}
-	
-	/**
-	 * 
-	 * @return API service as specified by the user.
-	 */
-	public static String GetService() {
-		return service;
-	}
-	
-	public String GetResponse(String responseBody) {
 		return responseBody;
+	}
+	
+	/**
+	 * 
+	 * @param responseBody
+	 * @return HTTP Response if not null, otherwise throw NullPointerException and return null.
+	 */
+//	public String GetResponse(String responseBody) {
+//		try {
+//			String result = responseBody;
+//			return result;
+//		} catch(NullPointerException e) {
+//			System.err.println(e);
+//		}
+//		return null;
+//	}
+	
+	public static void main(String[] args) {
+		String httpResponse = null;
+		try {
+			httpResponse = ApiRequest.ApiRequest(apodRequest);
+		} catch(Exception e) {
+			System.err.println(e);
+		}
+		System.out.println(httpResponse);
 	}
 }
