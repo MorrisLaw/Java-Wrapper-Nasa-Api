@@ -60,8 +60,8 @@ public class Apod {
 	 * @return the media type of the Apod as a String.
 	 */
     public static String media_type() {
-    	return apodJsonObj.get("media_type").toString();
-	}
+        return apodJsonObj.get("media_type").toString();
+    }
 	
     /**
      * 
@@ -76,7 +76,7 @@ public class Apod {
 	 * @return the title as a String.
 	 */
 	public static String title() {
-		return apodJsonObj.get("title").toString();
+    	return apodJsonObj.get("title").toString();
 	}
 
 	/**
