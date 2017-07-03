@@ -10,6 +10,8 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 public class ApiRequest {
 	/**
@@ -17,7 +19,7 @@ public class ApiRequest {
 	 */
 	// By default the api key is set to your environment variable.
 	public static String apiKey = null;
-	private static final String urlApiKeySuffix = "?api_key=" + GetApiKey(apiKey);
+	private static final String urlApiKeySuffix = "?api_key=" + getApiKey(apiKey);
 	private static final String baseUrl = "https://api.nasa.gov";
 	// NASA services.
 	public static final String apodService = "/planetary/apod";
@@ -29,7 +31,7 @@ public class ApiRequest {
 	 * @param service, a String that specifies which API service is passed in to the HTTP GET request.
 	 * @return The HTTP response for the HTTP GET request.
 	 */
-	public static String GetData(String service) throws Exception {
+	public static String getData(String service) throws Exception {
 		
 		// HTTP response object.
 		String responseBody = null;
@@ -66,7 +68,7 @@ public class ApiRequest {
 	 * @param newApiKey, a String value that the user can define as being their new Api Key as 
 	 * opposed to using the system environment variable.
 	 */
-	public static void SetApiKey(String newApiKey) {
+	public static void setApiKey(String newApiKey) {
 		apiKey = newApiKey;
 	}
 	
@@ -77,11 +79,27 @@ public class ApiRequest {
 	 * system environment variable for NASA_API_KEY if it has not already been set, even if it's null. 
 	 * You can change this by setting a new NASA API key via SetApiKey(String newApiKey).
 	 */
-	public static String GetApiKey(String apiKey) {
+	public static String getApiKey(String apiKey) {
 		if(apiKey == null || apiKey == "") {
 			apiKey = System.getenv("NASA_API_KEY");
 		}
 		return apiKey;
+	}
+	
+	/**
+	 * 
+	 * @param responseBody, String object of JSON data.
+	 * @return a json object.
+	 */
+	public static JSONObject getJsonObject(String responseBody) {
+		JSONObject json = new JSONObject();
+		JSONParser parser = new JSONParser();
+		try{
+			json = (JSONObject) parser.parse(responseBody);
+		} catch(Exception e) {
+			System.err.print(e);
+		}
+		return json;
 	}
 	
 }
