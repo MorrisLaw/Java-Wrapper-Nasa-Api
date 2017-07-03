@@ -65,7 +65,7 @@ public class Apod {
 	
     	/**
      	* 
-     	* @return
+     	* @return version number of Apod service.
      	*/
 	public static String service_version() {
 		return apodJsonObj.get("service_version").toString();
