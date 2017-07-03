@@ -1,7 +1,6 @@
 package services;
 
 import java.io.IOException;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -89,7 +88,7 @@ public class ApiRequest {
 	/**
 	 * 
 	 * @param responseBody, String object of JSON data.
-	 * @return a json object.
+	 * @return a json object that has been parsed and read using json text via the JSONParser object.
 	 */
 	public static JSONObject getJsonObject(String responseBody) {
 		JSONObject json = new JSONObject();

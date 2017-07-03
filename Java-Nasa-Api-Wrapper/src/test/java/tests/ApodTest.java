@@ -1,35 +1,47 @@
 package tests;
 
-import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import org.json.simple.JSONObject;
 import org.junit.Test;
+import static org.junit.Assert.assertTrue;
 
 import services.Apod;
 
 public class ApodTest {
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
+	public static final JSONObject apodObject = Apod.getApodData();
+	
 	@Test
-	public void testGetApodDataReturnsNullWhenResponseBodyIsNull() {
-		assertNotNull(Apod.GetApodData());
+	public void testGetDate() {
+		assertTrue(apodObject.containsKey("date"));
+	}
+	
+	@Test
+	public void testGetExplanation() {
+		assertTrue(apodObject.containsKey("explanation"));
+	}
+	
+	@Test
+	public void testGetHdurl() {
+		assertTrue(apodObject.containsKey("hdurl"));
+	}
+	
+	@Test
+	public void testGetMediaType() {
+		assertTrue(apodObject.containsKey("media_type"));
+	}
+	
+	@Test
+	public void testGetServiceVersion() {
+		assertTrue(apodObject.containsKey("service_version"));
+	}
+	
+	@Test
+	public void testGetTitle() {
+		assertTrue(apodObject.containsKey("title"));
+	}
+	
+	@Test
+	public void testGetUrl() {
+		assertTrue(apodObject.containsKey("url"));
 	}
 }
