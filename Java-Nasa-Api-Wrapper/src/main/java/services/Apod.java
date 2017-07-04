@@ -1,5 +1,6 @@
 package services;
 
+import java.time.LocalDate;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -33,10 +34,12 @@ public class Apod {
 	
 	/**
 	 * 
-	 * @return Date of the Apod as a String.
+	 * @return LocalDate object of the Apod date, in yyyy-MM-dd format.
 	 */
-	public static String date() {
-		return apodJsonObj.get("date").toString();
+	public static LocalDate date() {
+		String date = apodJsonObj.get("date").toString();
+		LocalDate dateObj = LocalDate.parse(date);
+		return dateObj;
 	}
 	
 	/**
@@ -86,4 +89,5 @@ public class Apod {
 	public static String url() {
 		return apodJsonObj.get("url").toString();
 	}
+	
 }
