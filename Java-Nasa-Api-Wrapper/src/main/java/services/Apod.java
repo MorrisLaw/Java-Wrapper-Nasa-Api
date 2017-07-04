@@ -54,8 +54,8 @@ public class Apod {
 	 * 
 	 * @return the url of the High Definition image as a String.
 	 */
-	public static String hdurl() {
-		return apodJsonObj.get("hdurl").toString();
+	public static boolean hdurl() {
+		return Boolean.parseBoolean(apodJsonObj.get("hdurl").toString());
 	}
 	
 	/**
