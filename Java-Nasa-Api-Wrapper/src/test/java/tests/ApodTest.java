@@ -6,9 +6,14 @@ import static org.junit.Assert.assertTrue;
 
 import services.Apod;
 
+/**
+ * Tests for Apod service.
+ * @author Jeremy L. Morris
+ *
+ */
 public class ApodTest {
 
-	public static final JSONObject apodObject = Apod.getApodData();
+	public static final JSONObject apodObject = Apod.getData();
 	
 	@Test
 	public void testGetDate() {

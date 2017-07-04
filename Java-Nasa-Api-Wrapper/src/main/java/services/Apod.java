@@ -4,15 +4,20 @@ import java.time.LocalDate;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+/**
+ * 
+ * @author Jeremy L. Morris
+ *
+ */
 public class Apod {
 	
-	private static final JSONObject apodJsonObj = getApodData();
+	private static final JSONObject apodJsonObj = getData();
 	
 	/**
 	 * 
 	 * @return JSON object containing APOD information.
 	 */
-	public static JSONObject getApodData() {
+	public static JSONObject getData() {
 		String responseBody = null;
 		JSONObject json = new JSONObject();
 		JSONParser parser = new JSONParser();

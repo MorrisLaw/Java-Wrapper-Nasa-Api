@@ -5,6 +5,11 @@ import org.junit.Test;
 
 import services.ApiRequest;
 
+/**
+ * Tests for Api Request.
+ * @author Jeremy L. Morris
+ *
+ */
 public class ApiRequestTest {
 
 	@Test
