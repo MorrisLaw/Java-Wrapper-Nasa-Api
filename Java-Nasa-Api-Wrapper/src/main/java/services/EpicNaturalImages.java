@@ -1,7 +1,9 @@
 package services;
 
-import java.util.List;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -89,15 +91,24 @@ public class EpicNaturalImages {
 //		
 //	}
 //	
-//	public static LocalDate dates() {
-//		
-//	}
+	public static List<String> dates() {
+		List<String> dates = new ArrayList<>();
+		JSONObject json = null;
+		String date = null;
+		// Iterate through an JSONArray of JSONObjects and store each date object into an ArrayList.
+		for (int i = 0; i < epicJsonObj.size(); i++) {
+			json = (JSONObject) epicJsonObj.get(i);
+			date = json.get("date").toString();
+			dates.add(date);
+		}
+		return dates;
+	}
 	
 	public static List<String> coordinates() {
 		List<String> coordinates = new ArrayList<>();
 		JSONObject json = null;
 		String coordinate = null;
-		// Iterate through an JSONArray of JSONObjects and store each caption string into an ArrayList;
+		// Iterate through an JSONArray of JSONObjects and store each caption string into an ArrayList.
 		for (int i = 0; i < epicJsonObj.size(); i++) {
 			json = (JSONObject) epicJsonObj.get(i);
 			coordinate = json.get("coords").toString();
@@ -110,6 +121,7 @@ public class EpicNaturalImages {
 //		System.out.println(images());
 //		System.out.println(captions());
 //		System.out.println(coordinates());
+		System.out.println(dates());
 	}
 	
 }
