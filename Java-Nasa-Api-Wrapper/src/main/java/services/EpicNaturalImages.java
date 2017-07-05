@@ -112,7 +112,7 @@ public class EpicNaturalImages {
 		double x = 0;
 		double y = 0;
 		double z = 0;
-		double[] positions = new double[3];
+		double[] position = new double[3];
 		// Iterate through a JSONArray of JSONObjects and store dscovr j2000 position coordinates in double array.
 		for (int i = 0; i < epicJsonObj.size(); i++) {
 			json = (JSONObject) epicJsonObj.get(i);
@@ -122,19 +122,46 @@ public class EpicNaturalImages {
 			y = Double.parseDouble(dscovrPosition.get("y").toString());
 			z = Double.parseDouble(dscovrPosition.get("z").toString());
 			// Add position array to arraylist.
-			positions[0] = x;
-			positions[1] = y;
-			positions[2] = z;
-			dscovr.add(positions);
-			// Need to clear out the array by re-initializin it to null array of size 3. Otherwise, values won't change.
-			positions = new double[3];
+			position[0] = x;
+			position[1] = y;
+			position[2] = z;
+			dscovr.add(position);
+			// Need to clear out the array by re-initializing it to null array of size 3. Otherwise, values won't change.
+			position = new double[3];
 		}
 		return dscovr;
 	}
 	
-//	public static double[] lunar_j2000_positions() {
-//		
-//	}
+	/**
+	 * 
+	 * @return An arraylist of double array objects containing the position, x,y,z coordinates, of lunar j2000.
+	 */
+	public static List<double[]> lunar_j2000_positions() {
+		List<double[]> lunar = new ArrayList<>();
+		JSONObject json = null;
+		// Coordinates for a given position.
+		double x = 0;
+		double y = 0;
+		double z = 0;
+		double[] position = new double[3];
+		// Iterate through a JSONArray of JSONObjects and store lunar j2000 position coordinates in double array.
+		for (int i = 0; i < epicJsonObj.size(); i++) {
+			json = (JSONObject) epicJsonObj.get(i);
+			// Save x,y and z coordinates, and store as doubles.
+			JSONObject lunarPosition = (JSONObject) json.get("lunar_j2000_position");
+			x = Double.parseDouble(lunarPosition.get("x").toString());
+			y = Double.parseDouble(lunarPosition.get("y").toString());
+			z = Double.parseDouble(lunarPosition.get("z").toString());
+			// Add position array to arraylist.
+			position[0] = x;
+			position[1] = y;
+			position[2] = z;
+			lunar.add(position);
+			// Need to clear out the array by re-initializing it to null array of size 3. Otherwise, values won't change.
+			position = new double[3];
+		}
+		return lunar;
+	}
 //	
 //	public static double[] sun_j2000_positions() {
 //		
@@ -180,6 +207,11 @@ public class EpicNaturalImages {
 //      for (int i = 0; i < dscovr_j2000_positions().size(); i++) {
 //    	  System.out.println(Arrays.toString(dscovr_j2000_positions().get(i)));
 //      }
+//		JSONObject json = (JSONObject) epicJsonObj.get(0);
+//		JSONObject coord = (JSONObject) json.get("centroid_coordinates");
+//		double lat = (double) coord.get("lat");
+//		double lon = (double) coord.get("lon");
+//		System.out.println(lat);
+//		System.out.println(lon);
 	}
-	
 }
