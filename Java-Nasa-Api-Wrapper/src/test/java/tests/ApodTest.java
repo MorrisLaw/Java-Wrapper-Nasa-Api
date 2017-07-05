@@ -26,11 +26,6 @@ public class ApodTest {
 	}
 	
 	@Test
-	public void testGetHdurl() {
-		assertTrue(apodObject.containsKey("hdurl"));
-	}
-	
-	@Test
 	public void testGetMediaType() {
 		assertTrue(apodObject.containsKey("media_type"));
 	}
