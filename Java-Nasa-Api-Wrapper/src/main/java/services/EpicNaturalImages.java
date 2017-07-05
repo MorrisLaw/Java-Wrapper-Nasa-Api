@@ -2,6 +2,7 @@ package services;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.json.simple.JSONArray;
@@ -47,7 +48,7 @@ public class EpicNaturalImages {
 		List<String> images = new ArrayList<>();
 		JSONObject json = null;
 		String image = null;
-		// Iterate through an JSONArray of JSONObjects and store each image string into an ArrayList.
+		// Iterate through a JSONArray of JSONObjects and store each image string into an ArrayList.
 		for (int i = 0; i < epicJsonObj.size(); i++) {
 			json = (JSONObject) epicJsonObj.get(i);
 			image = json.get("image").toString();
@@ -56,11 +57,15 @@ public class EpicNaturalImages {
 		return images;
 	}
 	
+	/**
+	 * 
+	 * @return An arraylist of Strings, of which are captions for the EPIC Natural Image.
+	 */
 	public static List<String> captions() {
 		List<String> captions = new ArrayList<>();
 		JSONObject json = null;
 		String caption = null;
-		// Iterate through an JSONArray of JSONObjects and store each caption string into an ArrayList;
+		// Iterate through a JSONArray of JSONObjects and store each caption string into an ArrayList;
 		for (int i = 0; i < epicJsonObj.size(); i++) {
 			json = (JSONObject) epicJsonObj.get(i);
 			caption = json.get("caption").toString();
@@ -69,11 +74,32 @@ public class EpicNaturalImages {
 		return captions;
 	}
 	
-//	public static double[] centroid_coordinates() {
-//		double[] coord = new double[2];
-//		
-//		return coord;
-//	}
+	/**
+	 * 
+	 * @return An arraylist of double array objects containing the centroid_coordinates for the EPIC natural image.
+	 */
+	public static List<double[]> centroid_coordinates() {
+		List<double[]> centroid_coords = new ArrayList<>();
+		JSONObject json = null;
+		double latitude = 0;
+		double longitude = 0;
+		double[] coordinates = new double[2];
+		// Iterate through a JSONArray of JSONObjects and store centroid_coordinates in double array.
+		for (int i = 0; i < epicJsonObj.size(); i++) {
+			json = (JSONObject) epicJsonObj.get(i);
+			// Save latitude and longitude as doubles.
+			JSONObject centroid_coord_pair = (JSONObject) json.get("centroid_coordinates");
+			latitude = Double.parseDouble(centroid_coord_pair.get("lat").toString());
+			longitude = Double.parseDouble(centroid_coord_pair.get("lon").toString());
+			// Populate the double array with the two coordinates, then add to the arraylist of double arrays.
+			coordinates[0] = latitude;
+			coordinates[1] = longitude;
+			centroid_coords.add(coordinates);
+			// Need to clear out the array by re-initializing it to null array of size 2. Otherwise, values won't change.
+			coordinates = new double[2];
+		}
+		return centroid_coords;
+	}
 	
 //	public static double[][] dscovr_j2000_positions() {
 //		
@@ -121,7 +147,8 @@ public class EpicNaturalImages {
 //		System.out.println(images());
 //		System.out.println(captions());
 //		System.out.println(coordinates());
-		System.out.println(dates());
+//		System.out.println(dates());
+      System.out.println(centroid_coordinates());
 	}
 	
 }
