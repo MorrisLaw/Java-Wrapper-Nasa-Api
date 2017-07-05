@@ -1,17 +1,23 @@
 package services;
 
+import java.time.LocalDate;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+/**
+ * 
+ * @author Jeremy L. Morris
+ *
+ */
 public class Apod {
 	
-	private static final JSONObject apodJsonObj = getApodData();
+	private static final JSONObject apodJsonObj = getData();
 	
 	/**
 	 * 
 	 * @return JSON object containing APOD information.
 	 */
-	public static JSONObject getApodData() {
+	public static JSONObject getData() {
 		String responseBody = null;
 		JSONObject json = new JSONObject();
 		JSONParser parser = new JSONParser();
@@ -33,10 +39,12 @@ public class Apod {
 	
 	/**
 	 * 
-	 * @return Date of the Apod as a String.
+	 * @return LocalDate object of the Apod date, in yyyy-MM-dd format.
 	 */
-	public static String date() {
-		return apodJsonObj.get("date").toString();
+	public static LocalDate date() {
+		String date = apodJsonObj.get("date").toString();
+		LocalDate dateObj = LocalDate.parse(date);
+		return dateObj;
 	}
 	
 	/**
@@ -51,14 +59,15 @@ public class Apod {
 	 * 
 	 * @return the url of the High Definition image as a String.
 	 */
-	public static String hdurl() {
-		return apodJsonObj.get("hdurl").toString();
+	public static boolean hdurl() {
+		return Boolean.parseBoolean(apodJsonObj.get("hdurl").toString());
 	}
 	
 	/**
 	 * 
 	 * @return the media type of the Apod as a String.
 	 */
+<<<<<<< HEAD
     	public static String media_type() {
      		return apodJsonObj.get("media_type").toString();
     	}
@@ -67,6 +76,16 @@ public class Apod {
      	* 
      	* @return version number of Apod service.
      	*/
+=======
+	public static String media_type() {
+    	return apodJsonObj.get("media_type").toString();
+	}
+
+	/**
+ 	 * 
+ 	 * @return version number of Apod service.
+ 	 */
+>>>>>>> develop
 	public static String service_version() {
 		return apodJsonObj.get("service_version").toString();
 	}
@@ -86,4 +105,8 @@ public class Apod {
 	public static String url() {
 		return apodJsonObj.get("url").toString();
 	}
+<<<<<<< HEAD
+=======
+	
+>>>>>>> develop
 }
