@@ -7,7 +7,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 /**
- * 
+ * Get and returns a json array from the EPIC Natural Images API service as well as options 
+ * for getting individual fields as lists of the original type.
  * @author Jeremy L. Morris
  *
  */

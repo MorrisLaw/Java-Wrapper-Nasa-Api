@@ -32,7 +32,6 @@ public class ApiRequest {
 	public static final String neoServiceLookup = "neo/rest/v1/neo/3542519";
 	public static final String neoServiceBrowse = "neo/rest/v1/neo/browse";
 	public static final String epicServiceNaturalImages = "/EPIC/api/natural/images";
-	public static final String epicServiceEnhancedAll = "EPIC/api/enhanced/all";
 	// Variable to be passed in to GetData() as a String, representing specific NASA service.
 	static String service = null;
 	
