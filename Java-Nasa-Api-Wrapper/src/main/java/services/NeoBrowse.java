@@ -1,5 +1,9 @@
 package services;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -31,6 +35,10 @@ public class NeoBrowse {
 		return json;
 	}
 	
+	/**
+	 * 
+	 * @return links json object.
+	 */
 	public static JSONObject links() {
 		final JSONObject links = (JSONObject) neoBrowseJsonObj.get("link");
 		return links;
@@ -92,7 +100,51 @@ public class NeoBrowse {
 		return Integer.parseInt(page().get("number").toString());
 	}
 	
-	public static void main(String[] args) {
-		System.out.println();
+	/**
+	 * 
+	 * @return ArrayList of NEO json objects.
+	 */
+	public static List<JSONObject> nearEarthObject() {
+		List<JSONObject> neoList = new ArrayList<>();
+		final JSONArray neo = (JSONArray) neoBrowseJsonObj.get("near_earth_objects");
+		// Populate list with NEO objects.
+		for(int i = 0; i < neo.size(); i++) {
+			JSONObject json = (JSONObject) neo.get(i);
+			neoList.add(json);
+		}
+		return neoList;
+	}
+	
+	/**
+	 * 
+	 * @return ArrayList of NEO links json objects.
+	 */
+	public static List<JSONObject> neoLinks() {
+		final List<JSONObject> neoLinks = new ArrayList<>();
+		// Populate list with NEO links json objects.
+		for(int i = 0; i < nearEarthObject().size(); i++) {
+			// A NEO object.
+			JSONObject json = (JSONObject) nearEarthObject().get(i);
+			// Add individual links json object to list.
+			for(int j = 0; j < json.size(); j++) {
+				neoLinks.add((JSONObject) json.get("links"));
+			}	
+		}
+		return neoLinks;
+	}
+	
+	/**
+	 * 
+	 * @return a list of NEO links.
+	 */
+	public static List<String> neoLinkSelf() {
+		List<String> selfLinks = new ArrayList<>();
+		// Populate list with NEO links to each NEO page, includes your appended API key.
+		for(int i = 0; i < neoLinks().size(); i++) {
+			JSONObject linkObj = (JSONObject) neoLinks().get(i);
+			// Get the actual url link.
+			selfLinks.add(linkObj.get("self").toString());
+		}
+		return selfLinks;
 	}
 }
