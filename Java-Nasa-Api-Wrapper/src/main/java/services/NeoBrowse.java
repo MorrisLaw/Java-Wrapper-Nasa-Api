@@ -10,6 +10,9 @@ import org.json.simple.parser.JSONParser;
 public class NeoBrowse {
 
 	private static final JSONObject neoBrowseJsonObj = getData();
+	private static final JSONObject page = (JSONObject) neoBrowseJsonObj.get("page");
+	private static final JSONObject links = (JSONObject) neoBrowseJsonObj.get("link");
+	private static final JSONArray neo = (JSONArray) neoBrowseJsonObj.get("near_earth_objects");
 	
 	/**
 	 * 
@@ -40,8 +43,7 @@ public class NeoBrowse {
 	 * @return links json object.
 	 */
 	public static JSONObject links() {
-		final JSONObject links = (JSONObject) neoBrowseJsonObj.get("link");
-		return links;
+		return NeoBrowse.links;
 	}
 	
 	/**
@@ -65,8 +67,7 @@ public class NeoBrowse {
 	 * @return page json object.
 	 */
 	public static JSONObject page() {
-		final JSONObject page = (JSONObject) neoBrowseJsonObj.get("page");
-		return page;
+		return NeoBrowse.page;
 	}
 	/**
 	 * 
@@ -106,7 +107,7 @@ public class NeoBrowse {
 	 */
 	public static List<JSONObject> nearEarthObject() {
 		List<JSONObject> neoList = new ArrayList<>();
-		final JSONArray neo = (JSONArray) neoBrowseJsonObj.get("near_earth_objects");
+		JSONArray neo = NeoBrowse.neo;
 		// Populate list with NEO objects.
 		for(int i = 0; i < neo.size(); i++) {
 			JSONObject json = (JSONObject) neo.get(i);
@@ -120,7 +121,7 @@ public class NeoBrowse {
 	 * @return ArrayList of NEO links json objects.
 	 */
 	public static List<JSONObject> neoLinks() {
-		final List<JSONObject> neoLinks = new ArrayList<>();
+		List<JSONObject> neoLinks = new ArrayList<>();
 		// Populate list with NEO links json objects.
 		for(int i = 0; i < nearEarthObject().size(); i++) {
 			// A NEO object.
