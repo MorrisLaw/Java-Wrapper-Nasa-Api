@@ -1,7 +1,8 @@
 package services;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -103,49 +104,32 @@ public class NeoBrowse {
 	
 	/**
 	 * 
-	 * @return ArrayList of NEO json objects.
+	 * @return LinkedHashSet of NEO json objects.
 	 */
-	public static List<JSONObject> nearEarthObject() {
-		List<JSONObject> neoList = new ArrayList<>();
+	public static Set<JSONObject> nearEarthObject() {
+		Set<JSONObject> neoSet = new LinkedHashSet<>();
 		JSONArray neo = NeoBrowse.neo;
-		// Populate list with NEO objects.
+		// Populate set with NEO objects.
 		for(int i = 0; i < neo.size(); i++) {
 			JSONObject json = (JSONObject) neo.get(i);
-			neoList.add(json);
+			neoSet.add(json);
 		}
-		return neoList;
+		return neoSet;
 	}
 	
 	/**
 	 * 
-	 * @return ArrayList of NEO links json objects.
+	 * @return LinkedHashSet of NEO links.
 	 */
-	public static List<JSONObject> neoLinks() {
-		List<JSONObject> neoLinks = new ArrayList<>();
-		// Populate list with NEO links json objects.
-		for(int i = 0; i < nearEarthObject().size(); i++) {
-			// A NEO object.
-			JSONObject json = (JSONObject) nearEarthObject().get(i);
-			// Add individual links json object to list.
-			for(int j = 0; j < json.size(); j++) {
-				neoLinks.add((JSONObject) json.get("links"));
-			}	
+	public static Set<String> neoLinks() {
+		Set<String> neoLinksSet = new LinkedHashSet<>();
+		// Add links.
+		Iterator<JSONObject> iter = nearEarthObject().iterator();
+		while(iter.hasNext()) {
+			JSONObject json = (JSONObject) iter.next(); // Near Earth Object.
+			JSONObject links = (JSONObject) json.get("links"); // Links Object.
+			neoLinksSet.add(links.get("self").toString()); // Add link, as String.
 		}
-		return neoLinks;
-	}
-	
-	/**
-	 * 
-	 * @return a list of NEO links.
-	 */
-	public static List<String> neoLinkSelf() {
-		List<String> selfLinks = new ArrayList<>();
-		// Populate list with NEO links to each NEO page, includes your appended API key.
-		for(int i = 0; i < neoLinks().size(); i++) {
-			JSONObject linkObj = (JSONObject) neoLinks().get(i);
-			// Get the actual url link.
-			selfLinks.add(linkObj.get("self").toString());
-		}
-		return selfLinks;
+		return neoLinksSet;
 	}
 }
