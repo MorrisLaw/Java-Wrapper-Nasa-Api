@@ -33,7 +33,7 @@ public class ApiRequest {
 	public static final String neoServiceBrowse = "neo/rest/v1/neo/browse";
 	public static final String epicServiceNaturalImages = "/EPIC/api/natural/images";
 	// Variable to be passed in to GetData() as a String, representing specific NASA service.
-	static String service = null;
+	static final String service = null;
 	
 	/**
 	 * Returns the HTTP response in the form of JSON.
@@ -41,10 +41,10 @@ public class ApiRequest {
 	 * @param service, a String that specifies which API service is passed in to the HTTP GET request.
 	 * @return The HTTP response for the HTTP GET request.
 	 */
-	protected static String getData(String service) throws Exception {
+	protected static String getData(final String service) throws Exception {
 		// HTTP response object.
 		String responseBody = null;
-		CloseableHttpClient httpClient = HttpClients.createDefault();
+		final CloseableHttpClient httpClient = HttpClients.createDefault();
 		try {
 			HttpGet httpGet = null;
 			// URL builder for the HTTP GET request.
@@ -82,7 +82,7 @@ public class ApiRequest {
 	 * @param newApiKey, a String value that the user can define as being their new Api Key as 
 	 * opposed to using the system environment variable.
 	 */
-	public static void setApiKey(String newApiKey) {
+	public static void setApiKey(final String newApiKey) {
 		apiKey = newApiKey;
 	}
 	
@@ -105,7 +105,7 @@ public class ApiRequest {
 	 * @param responseBody, String object of JSON data.
 	 * @return a json object that has been parsed and read using json text via the JSONParser object.
 	 */
-	public static JSONObject getJsonObject(String responseBody) {
+	public static JSONObject getJsonObject(final String responseBody) {
 		JSONObject json = new JSONObject();
 		JSONParser parser = new JSONParser();
 		try{

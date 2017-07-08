@@ -42,8 +42,8 @@ public class Apod {
 	 * @return LocalDate object of the Apod date, in yyyy-MM-dd format.
 	 */
 	public static LocalDate date() {
-		String date = apodJsonObj.get("date").toString();
-		LocalDate dateObj = LocalDate.parse(date);
+		final String date = apodJsonObj.get("date").toString();
+		final LocalDate dateObj = LocalDate.parse(date);
 		return dateObj;
 	}
 	
