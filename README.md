@@ -1,7 +1,7 @@
 # Java-Wrapper-Nasa-Api
 
 ## Description
-This is a Java wrapper for NASA's open API. The current services that this API Wrapper support are:
+This is a Java wrapper for NASA's open API. The current services that are supported by this wrapper, include:
 
 * [APOD](https://api.nasa.gov/api.html#apod)
 
