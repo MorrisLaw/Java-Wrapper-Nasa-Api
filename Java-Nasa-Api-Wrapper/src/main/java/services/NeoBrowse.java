@@ -16,7 +16,7 @@ public class NeoBrowse {
 	
 	/**
 	 * 
-	 * @return JSON object containing APOD information.
+	 * @return JSON object containing neo information.
 	 */
 	public static JSONObject getData() {
 		String responseBody = null;

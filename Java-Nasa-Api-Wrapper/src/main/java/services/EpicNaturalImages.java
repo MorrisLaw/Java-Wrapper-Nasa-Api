@@ -2,6 +2,7 @@ package services;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -96,20 +97,11 @@ public class EpicNaturalImages {
 	 */
 	public static List<double[]> dscovrJ2000Positions() {
 		List<double[]> dscovr = new ArrayList<>();
-		double[] position = new double[3];
 		// Iterate through a JSONArray of JSONObjects and store dscovr j2000 position coordinates in double array.
 		for (int i = 0; i < epicJsonObj.size(); i++) {
 			final JSONObject json = (JSONObject) epicJsonObj.get(i);
 			final JSONObject dscovrPosition = (JSONObject) json.get("dscovr_j2000_position");
-			final double x = Double.parseDouble(dscovrPosition.get("x").toString());
-			final double y = Double.parseDouble(dscovrPosition.get("y").toString());
-			final double z = Double.parseDouble(dscovrPosition.get("z").toString());
-			position[0] = x;
-			position[1] = y;
-			position[2] = z;
-			dscovr.add(position);
-			// Need to clear out the array by re-initializing it to null array of size 3. Otherwise, values won't change.
-			position = new double[3];
+			dscovr.add(positionCoordinates(dscovrPosition));
 		}
 		return dscovr;
 	}
@@ -120,20 +112,11 @@ public class EpicNaturalImages {
 	 */
 	public static List<double[]> lunarJ2000Positions() {
 		List<double[]> lunar = new ArrayList<>();
-		double[] position = new double[3];
 		// Iterate through a JSONArray of JSONObjects and store lunar j2000 position coordinates in double array.
 		for (int i = 0; i < epicJsonObj.size(); i++) {
 			final JSONObject json = (JSONObject) epicJsonObj.get(i);
 			final JSONObject lunarPosition = (JSONObject) json.get("lunar_j2000_position");
-			final double x = Double.parseDouble(lunarPosition.get("x").toString());
-			final double y = Double.parseDouble(lunarPosition.get("y").toString());
-			final double z = Double.parseDouble(lunarPosition.get("z").toString());
-			position[0] = x;
-			position[1] = y;
-			position[2] = z;
-			lunar.add(position);
-			// Need to clear out the array by re-initializing it to null array of size 3. Otherwise, values won't change.
-			position = new double[3];
+			lunar.add(positionCoordinates(lunarPosition));
 		}
 		return lunar;
 	}
@@ -144,24 +127,31 @@ public class EpicNaturalImages {
 	 */
 	public static List<double[]> sunJ2000Positions() {
 		List<double[]> sun = new ArrayList<>();
-		double[] position = new double[3];
 		// Iterate through a JSONArray of JSONObjects and store sun j2000 position coordinates in double array.
 		for (int i = 0; i < epicJsonObj.size(); i++) {
 			final JSONObject json = (JSONObject) epicJsonObj.get(i);
 			final JSONObject sunPosition = (JSONObject) json.get("sun_j2000_position");
-			final double x = Double.parseDouble(sunPosition.get("x").toString());
-			final double y = Double.parseDouble(sunPosition.get("y").toString());
-			final double z = Double.parseDouble(sunPosition.get("z").toString());
-			position[0] = x;
-			position[1] = y;
-			position[2] = z;
-			sun.add(position);
-			// Need to clear out the array by re-initializing it to null array of size 3. Otherwise, values won't change.
-			position = new double[3];
+			sun.add(positionCoordinates(sunPosition));
 		}
 		return sun;
 	}
 	
+	/**
+	 * 
+	 * @param j2000Position
+	 * @return Return a double[] containing the position coordinates of Xj2000 where X represents
+	 * either lunar, sun or dscovr.
+	 */
+	private static double[] positionCoordinates(JSONObject Xj2000Position) {
+		final double[] position = new double[3];
+		final double x = Double.parseDouble(Xj2000Position.get("x").toString());
+		final double y = Double.parseDouble(Xj2000Position.get("y").toString());
+		final double z = Double.parseDouble(Xj2000Position.get("z").toString());
+		position[0] = x;
+		position[1] = y;
+		position[2] = z;
+		return position;
+	}
 	/**
 	 * 
 	 * @return An arraylist of attitude quaternions.
