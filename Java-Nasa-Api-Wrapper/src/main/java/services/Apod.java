@@ -67,16 +67,6 @@ public class Apod {
 	 * 
 	 * @return the media type of the Apod as a String.
 	 */
-<<<<<<< HEAD
-    	public static String media_type() {
-     		return apodJsonObj.get("media_type").toString();
-    	}
-	
-    	/**
-     	* 
-     	* @return version number of Apod service.
-     	*/
-=======
 	public static String media_type() {
     	return apodJsonObj.get("media_type").toString();
 	}
@@ -85,7 +75,6 @@ public class Apod {
  	 * 
  	 * @return version number of Apod service.
  	 */
->>>>>>> develop
 	public static String service_version() {
 		return apodJsonObj.get("service_version").toString();
 	}
@@ -105,8 +94,4 @@ public class Apod {
 	public static String url() {
 		return apodJsonObj.get("url").toString();
 	}
-<<<<<<< HEAD
-=======
-	
->>>>>>> develop
 }
