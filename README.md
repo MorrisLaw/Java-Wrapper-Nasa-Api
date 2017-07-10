@@ -1,7 +1,11 @@
 # Java-Wrapper-Nasa-Api
 
 ## Description
-This is a Java wrapper for NASA's open API. 
+This is a Java wrapper for NASA's open API. The current services that this API Wrapper support are:
+
+[APOD](https://api.nasa.gov/api.html#apod)
+[Neo - Browse](https://api.nasa.gov/api.html#neows-browse]=)
+[EPIC - Natural Images](https://api.nasa.gov/api.html#EPIC)
 
 **Note:** This Java API Wrapper has been developed and/or tested on Ubuntu 16.04 and macOS Sierra v10.12.3. I have not tested the instructions below on any other OS. Sorry for any inconvenience. 
 
