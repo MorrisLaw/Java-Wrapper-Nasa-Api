@@ -16,8 +16,23 @@ public class NeoBrowseTest {
 	private static final JSONArray neo = (JSONArray) neoBrowseJsonObj.get("near_earth_objects");
 	
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testNeoBrowseJsonObjNotNull() {
+		assertNotNull(neoBrowseJsonObj);
+	}
+	
+	@Test
+	public void testPageNotNull() {
+		assertNotNull(page);
+	}
+	
+	@Test
+	public void testPageLinksNotNull() {
+		assertNotNull(pageLinks);
+	}
+	
+	@Test
+	public void testNeoNotNull() {
+		assertNotNull(neo);
 	}
 
 }
