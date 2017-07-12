@@ -39,7 +39,9 @@ This is a Java wrapper for NASA's open API. The current services that are suppor
 ## Getting Started 
 
 ### API Key
-In order to utilize or contribute to this API wrapper, you first need to retrieve an API key. Follow the instructions at this [link](https://api.nasa.gov/index.html#apply-for-an-api-key) get your API key. Once you have your API key, I recommend exporting it as an environment variable.
+In order to utilize or contribute to this API wrapper, you first need to retrieve an API key. Follow the instructions at this [link](https://api.nasa.gov/index.html#apply-for-an-api-key) get your API key. Once you have your API key, I recommend exporting it as an environment variable. If this isn't a possible or viable option for your needs, then simply use ```ApiRequest.setApiKey(String apiKey)``` to manually set your key. 
+
+**WARNING:** I recommend not hard-coding the api key String inside of your code.
 
 #### Recommended API Key storage options:
 
@@ -67,6 +69,10 @@ The Development Environment I've Used:
 OS: Ubuntu 16.04
 IDE: Eclipse Neon
 JDK/JRE: java-1.8 (java-8-oracle)
+Testing: Junit4
+Build: Maven
+
+Pull requests are welcome, as long as they are tested and pass the build tests in Maven.
 
 ### Fork and Clone this Project.
 - Use the fork button located at the top right of this page.
