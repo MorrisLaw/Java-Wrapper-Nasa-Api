@@ -7,7 +7,7 @@ public class NeoLookup {
 	
 	/**
 	 * 
-	 * @return JSON object containing neo information.
+	 * @return JSON object containing neo information based on a provided neo reference id.
 	 */
 	public static JSONObject getData(int neoReferenceId) {
 		String responseBody = null;
@@ -16,7 +16,7 @@ public class NeoLookup {
 		
 		try {
 			// String object of key value pairs.
-			responseBody = ApiRequest.getData(ApiRequest.neoServiceLookup + String.valueOf(neoReferenceId));
+			responseBody = ApiRequest.getResponse(ApiRequest.neoServiceLookup + String.valueOf(neoReferenceId));
 		} catch(Exception e) {
 			System.err.println(e);
 		}

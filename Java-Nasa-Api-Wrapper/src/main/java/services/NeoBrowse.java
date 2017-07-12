@@ -24,7 +24,7 @@ public class NeoBrowse {
 		
 		try {
 			// String object of key value pairs.
-			responseBody = ApiRequest.getData(ApiRequest.neoServiceBrowse);
+			responseBody = ApiRequest.getResponse(ApiRequest.neoServiceBrowse);
 		} catch(Exception e) {
 			System.err.println(e);
 		}

@@ -27,7 +27,7 @@ public class EpicNaturalImages {
 		JSONParser parser = new JSONParser();
 		
 		try {
-			responseBody = ApiRequest.getData(ApiRequest.epicServiceNaturalImages);
+			responseBody = ApiRequest.getResponse(ApiRequest.epicServiceNaturalImages);
 		} catch(Exception e) {
 			System.err.print(e);
 		}
