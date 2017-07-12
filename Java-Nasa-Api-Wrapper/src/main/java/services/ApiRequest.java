@@ -29,7 +29,7 @@ public class ApiRequest {
 	// NASA services.
 	public static final String apodService = "planetary/apod";
 	public static final String neoServiceFeed = "neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08"; //&api_key=DEMO_KEY";
-	public static final String neoServiceLookup = "neo/rest/v1/neo/3542519";
+	public static final String neoServiceLookup = "neo/rest/v1/neo/";
 	public static final String neoServiceBrowse = "neo/rest/v1/neo/browse";
 	public static final String epicServiceNaturalImages = "/EPIC/api/natural/images";
 	// Variable to be passed in to GetData() as a String, representing specific NASA service.
