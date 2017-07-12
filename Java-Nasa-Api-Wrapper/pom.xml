@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.morrislaw.nasa</groupId>
   <artifactId>Java-Nasa-Api-Wrapper</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.9.0</version>
   <name>Java-Wrapper-Nasa-Api</name>
   <description>Java API wrapper for the NASA open API.</description>
   <dependencies>
