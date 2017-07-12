@@ -9,23 +9,23 @@ This is a Java wrapper for NASA's open API. The current services that are suppor
 
 * [EPIC - Natural Images](https://api.nasa.gov/api.html#EPIC)
 
-**Note:** This Java API Wrapper has been developed and/or tested on Ubuntu 16.04 and macOS Sierra v10.12.3. I have not tested the instructions below on any other OS. Sorry for any inconvenience. 
-
 ## Installation
 
-### Install Dependencies.
-Go to this [link](http://apache.mirror.colo-serv.net//httpcomponents/httpclient/binary/httpcomponents-client-4.5.3-bin.tar.gz) to install Apache HTTPComponents 4.5.3 binary tar.gz.
-
-**macOS Sierra v10.12.3:** 
-Steps to importing this library into eclipse.
-- When downloading this link, once it finishes use "Show in Finder" to find where it has downloaded onto your system. Double click the file to extract it. 
-- Open up Java-Wrapper-Nasa-Api in eclipse. Then add dependencies to project by including the following in your `pom.xml` file:
-
-```
+### Maven Dependencies.
+#### apache httpclient for http requests and http responses:
+```xml
 <dependency>
   <groupId>org.apache.httpcomponents</groupId>
-  <artifactId>httpclient</artifactId>
-  <version>4.5.3</version>
+	<artifactId>httpclient</artifactId>
+	<version>4.5.3</version>
+</dependency>
+```
+#### json-simple for json objects:
+```xml
+<dependency>
+	<groupId>com.googlecode.json-simple</groupId>
+	<artifactId>json-simple</artifactId>
+	<version>1.1.1</version>
 </dependency>
 ```
 
@@ -58,6 +58,11 @@ To temporarily store your API key in your current shell session, simply type int
 **In Progress**
 
 ## Contributing
+The Development Environment I've Used:
+
+OS: Ubuntu 16.04
+IDE: Eclipse Neon
+JDK/JRE: java-1.8 (java-8-oracle)
 
 ### Fork and Clone this Project.
 - Use the fork button located at the top right of this page.
