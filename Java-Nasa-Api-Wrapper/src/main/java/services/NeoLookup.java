@@ -3,6 +3,11 @@ package services;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+/**
+ * This allows the user to lookup a neo object based on its neo reference id.
+ * @author Jeremy L. Morris
+ *
+ */
 public class NeoLookup {
 	
 	/**

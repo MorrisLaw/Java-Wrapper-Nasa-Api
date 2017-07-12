@@ -6,6 +6,11 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+/**
+ * Returns a complete NEO dataset to browse.
+ * @author Jeremy L. Morris
+ *
+ */
 public class NeoBrowse {
 
 	private static final JSONObject neoBrowseJsonObj = getData();

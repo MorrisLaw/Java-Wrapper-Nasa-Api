@@ -3,6 +3,11 @@ package services;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+/**
+ * This service provides data for Nasa patents.
+ * @author Jeremy L. Morris
+ *
+ */
 public class Patents {
 
 	/**

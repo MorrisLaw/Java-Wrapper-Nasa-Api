@@ -3,6 +3,11 @@ package services;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+/**
+ * This service allows the user to provide a date range and browse the neo objects that fit that range.
+ * @author Jeremy L. Morris
+ *
+ */
 public class NeoFeed {
 	
 	/**
