@@ -24,7 +24,7 @@ public class Apod {
 		
 		try {
 			// String object of key value pairs.
-			responseBody = ApiRequest.getData(ApiRequest.apodService);
+			responseBody = ApiRequest.getResponse(ApiRequest.apodService);
 		} catch(Exception e) {
 			System.err.println(e);
 		}

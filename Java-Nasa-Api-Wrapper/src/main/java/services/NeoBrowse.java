@@ -2,11 +2,15 @@ package services;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+/**
+ * Returns a complete NEO dataset to browse.
+ * @author Jeremy L. Morris
+ *
+ */
 public class NeoBrowse {
 
 	private static final JSONObject neoBrowseJsonObj = getData();
@@ -25,7 +29,7 @@ public class NeoBrowse {
 		
 		try {
 			// String object of key value pairs.
-			responseBody = ApiRequest.getData(ApiRequest.neoServiceBrowse);
+			responseBody = ApiRequest.getResponse(ApiRequest.neoServiceBrowse);
 		} catch(Exception e) {
 			System.err.println(e);
 		}
@@ -136,9 +140,45 @@ public class NeoBrowse {
 	public static List<String> names() {
 		List<String> names = new ArrayList<>();
 		for (int i = 0; i < nearEarthObject().size(); i++) {
-			final JSONObject name = (JSONObject) nearEarthObject().get(i);
-			names.add(name.toString());
+			final JSONObject json = (JSONObject) nearEarthObject().get(i);
+			final String name = json.get("name").toString();
+			names.add(name);
 		}
 		return names;
 	}
+	
+	/**
+	 * 
+	 * @return an ArrayList of Nasa jpl url's.
+	 */
+	public static List<String> nasaJplUrls() {
+		List<String> urls = new ArrayList<>();
+		for (int i = 0; i < nearEarthObject().size(); i++) {
+			final JSONObject json = (JSONObject) nearEarthObject().get(i);
+			final String url = json.get("nasa_jpl_url").toString();
+			urls.add(url);
+		}
+		return urls;
+	}
+	
+	/**
+	 * 
+	 * @return an arraylist of absolute_magnitude_h values.
+	 */
+	public static List<String> absoluteMagnitudes() {
+		List<String> absMagnitudes = new ArrayList<>();
+		for (int i = 0; i < nearEarthObject().size(); i++) {
+			final JSONObject json = (JSONObject) nearEarthObject().get(i);
+			final String absMags = json.get("absolute_magnitude_h").toString();
+			absMagnitudes.add(absMags);
+		}
+		return absMagnitudes;
+	}
+	
+//	public static void main(String[] args) {
+//		List<String> test = absoluteMagnitudes();
+//		for (int i = 0; i < test.size(); i++) {
+//			System.out.println(test.get(i));
+//		}
+//	}
 }
