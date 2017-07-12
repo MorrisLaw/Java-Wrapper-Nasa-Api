@@ -1,4 +1,5 @@
 language: java
+jdk: java-8-oracle
 sudo: false
 script: mvn test -B
 # blocklist
