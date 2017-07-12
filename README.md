@@ -15,17 +15,17 @@ This is a Java wrapper for NASA's open API. The current services that are suppor
 #### apache httpclient for http requests and http responses:
 ```xml
 <dependency>
-  <groupId>org.apache.httpcomponents</groupId>
-	<artifactId>httpclient</artifactId>
-	<version>4.5.3</version>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5.3</version>
 </dependency>
 ```
 #### json-simple for json objects:
 ```xml
 <dependency>
-	<groupId>com.googlecode.json-simple</groupId>
-	<artifactId>json-simple</artifactId>
-	<version>1.1.1</version>
+    <groupId>com.googlecode.json-simple</groupId>
+    <artifactId>json-simple</artifactId>
+    <version>1.1.1</version>
 </dependency>
 ```
 
