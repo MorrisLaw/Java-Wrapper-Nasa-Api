@@ -1,0 +1,7 @@
+tests/NeoLookupTest.class
+tests/NeoFeedTest.class
+tests/ApiRequestTest.class
+tests/PatentsTest.class
+tests/ApodTest.class
+tests/NeoBrowseTest.class
+tests/EpicNaturalImageTest.class
