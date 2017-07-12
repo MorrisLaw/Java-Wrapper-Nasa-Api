@@ -7,7 +7,7 @@ import services.NeoLookup;
 public class NeoLookupTest {
 	
 	@Test
-	public void testNeoLookupObject() {
+	public void testNeoLookupObjectNotNull() {
 		assertNotNull(NeoLookup.getData(3542519));
 	}
 

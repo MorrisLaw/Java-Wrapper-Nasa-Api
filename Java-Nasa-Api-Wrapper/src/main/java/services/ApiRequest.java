@@ -28,10 +28,11 @@ public class ApiRequest {
 	private static final String baseUrl = "https://api.nasa.gov/";
 	// NASA services.
 	public static final String apodService = "planetary/apod";
-	public static final String neoServiceFeed = "neo/rest/v1/feed?"; //start_date=2015-09-07&end_date=2015-09-08"; //&api_key=DEMO_KEY";
+	public static final String neoServiceFeed = "neo/rest/v1/feed?";
 	public static final String neoServiceLookup = "neo/rest/v1/neo/";
 	public static final String neoServiceBrowse = "neo/rest/v1/neo/browse";
 	public static final String epicServiceNaturalImages = "/EPIC/api/natural/images";
+	public static final String patentsService = "patents/content?";
 	// Variable to be passed in to GetData() as a String, representing specific NASA service.
 	static final String service = null;
 	
@@ -48,7 +49,7 @@ public class ApiRequest {
 		try {
 			HttpGet httpGet = null;
 			// URL builder for the HTTP GET request.
-			if (service.contains(neoServiceFeed)) {
+			if (service.contains(neoServiceFeed) || service.contains(patentsService)) {
 				httpGet = new HttpGet(baseUrl + service + urlApiKeySuffix1);
 			}else{
 				httpGet = new HttpGet(baseUrl + service + urlApiKeySuffix0);
