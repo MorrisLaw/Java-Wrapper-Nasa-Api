@@ -1,4 +1,5 @@
-# Java-Wrapper-Nasa-Api [![Build Status](https://travis-ci.org/MorrisLaw/Java-Wrapper-Nasa-Api.svg?branch=master)](https://travis-ci.org/MorrisLaw/Java-Wrapper-Nasa-Api)
+# Java-Wrapper-Nasa-Api 
+[![Build Status](https://travis-ci.org/MorrisLaw/Java-Wrapper-Nasa-Api.svg?branch=master)](https://travis-ci.org/MorrisLaw/Java-Wrapper-Nasa-Api)
 ## Description
 This is a Java wrapper for NASA's open API. The current services that are supported by this wrapper, include:
 
