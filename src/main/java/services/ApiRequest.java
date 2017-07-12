@@ -21,7 +21,7 @@ public class ApiRequest {
 	/**
 	 * Gateway to NASA open API service(s).
 	 */
-	// By default the api key is set to your environment variable.
+	// By default the api key is set to DEMO_KEY.
 	public static String apiKey = null;
 	private static final String urlApiKeySuffix0 = "?api_key=" + getApiKey(apiKey);
 	private static final String urlApiKeySuffix1 = "&api_key=" + getApiKey(apiKey);
@@ -33,7 +33,7 @@ public class ApiRequest {
 	public static final String neoServiceBrowse = "neo/rest/v1/neo/browse";
 	public static final String epicServiceNaturalImages = "/EPIC/api/natural/images";
 	public static final String patentsService = "patents/content?";
-	// Variable to be passed in to GetData() as a String, representing specific NASA service.
+	// Variable to be passed in to GetResponse() as a String, representing specific NASA service.
 	static final String service = null;
 	
 	/**
@@ -81,7 +81,7 @@ public class ApiRequest {
 	/**
 	 * 
 	 * @param newApiKey, a String value that the user can define as being their new Api Key as 
-	 * opposed to using the system environment variable.
+	 * opposed to using the default DEMO_KEY.
 	 */
 	public static void setApiKey(final String newApiKey) {
 		apiKey = newApiKey;
@@ -91,12 +91,12 @@ public class ApiRequest {
 	 * 
 	 * @param apiKey, the current String value of the apiKey being used for HTTP GET requests.
 	 * @return the current String value of apiKey as seen by this API wrapper. By default, this returns the 
-	 * system environment variable for NASA_API_KEY if it has not already been set, even if it's null. 
-	 * You can change this by setting a new NASA API key via SetApiKey(String newApiKey).
+	 * system environment variable for DEMO_KEY if it has not already been set, even if it's null. 
+	 * You can change this by setting a new NASA API key via setApiKey(String newApiKey).
 	 */
 	public static String getApiKey(String apiKey) {
 		if(apiKey == null || apiKey == "") {
-			apiKey = System.getenv("NASA_API_KEY");
+			apiKey = "DEMO_KEY";
 		}
 		return apiKey;
 	}
