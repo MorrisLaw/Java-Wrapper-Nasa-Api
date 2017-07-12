@@ -5,13 +5,20 @@ This is a Java wrapper for NASA's open API. The current services that are suppor
 
 * [APOD](https://api.nasa.gov/api.html#apod)
 
-* [Neo - Browse](https://api.nasa.gov/api.html#neows-browse]=)
-
 * [EPIC - Natural Images](https://api.nasa.gov/api.html#EPIC)
+
+* [Asteroid - Browse](https://api.nasa.gov/api.html#neows-browse]=)
+
+* [Asteroid - Feed](https://api.nasa.gov/api.html#neows-feed)
+
+* [Asteroid - Lookup](https://api.nasa.gov/api.html#neows-lookup)
+
+* [Patents](https://api.nasa.gov/api.html#patents)
+
 
 ## Installation
 
-### Maven Dependencies.
+### Maven Dependencies
 #### apache httpclient for http requests and http responses:
 ```xml
 <dependency>
@@ -28,9 +35,6 @@ This is a Java wrapper for NASA's open API. The current services that are suppor
     <version>1.1.1</version>
 </dependency>
 ```
-
-**Ubuntu 16.04:**
-
 
 ## Getting Started 
 
