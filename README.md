@@ -72,7 +72,7 @@ JDK/JRE: java-1.8 (java-8-oracle)
 Testing: Junit4
 Build: Maven
 
-Pull requests are welcome, as long as they are tested and pass the build tests in Maven.
+Pull requests are welcome for the develop branch, as long as they are tested and pass the build tests in Maven. 
 
 ### Fork and Clone this Project.
 - Use the fork button located at the top right of this page.
