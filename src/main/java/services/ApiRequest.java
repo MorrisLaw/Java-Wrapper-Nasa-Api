@@ -59,19 +59,19 @@ public class ApiRequest {
 			// Create a custom response handler.
 			ResponseHandler<String> responseHandler = new ResponseHandler<String>() {
 			
-			    public String handleResponse(
-			    		final HttpResponse response) throws ClientProtocolException, IOException {
-			    	// Handling HTTP status codes.
-			    	int status = response.getStatusLine().getStatusCode();
-			    	if(status >= 200 && status < 300) {
-			    		HttpEntity entity = response.getEntity();
-			    		return entity != null ? EntityUtils.toString(entity) : null;
-			    	} else {
-			    		throw new ClientProtocolException("Unexpected response satus: " + status);
-			    	}
-			    }
+				public String handleResponse(
+					final HttpResponse response) throws ClientProtocolException, IOException {
+					// Handling HTTP status codes.
+					int status = response.getStatusLine().getStatusCode();
+					if(status >= 200 && status < 300) {
+						HttpEntity entity = response.getEntity();
+						return entity != null ? EntityUtils.toString(entity) : null;
+					} else {
+						throw new ClientProtocolException("Unexpected response satus: " + status);
+					}
+				}
 			};
-		    responseBody = httpClient.execute(httpGet, responseHandler);
+			responseBody = httpClient.execute(httpGet, responseHandler);
 		} finally {
 			httpClient.close();
 		}

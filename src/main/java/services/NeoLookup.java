@@ -9,7 +9,7 @@ import org.json.simple.parser.JSONParser;
  *
  */
 public class NeoLookup {
-	
+
 	/**
 	 * 
 	 * @return JSON object containing neo information based on a provided neo reference id.
