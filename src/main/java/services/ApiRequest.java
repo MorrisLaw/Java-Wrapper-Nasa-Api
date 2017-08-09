@@ -116,5 +116,4 @@ public class ApiRequest {
 		}
 		return json;
 	}
-	
 }
