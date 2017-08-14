@@ -35,9 +35,8 @@ This is a Java wrapper for NASA's open API. The current services that are suppor
     <version>1.1.1</version>
 </dependency>
 ```
-
-```
 #### gson library:
+```
 <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
 <dependency>
     <groupId>com.google.code.gson</groupId>
