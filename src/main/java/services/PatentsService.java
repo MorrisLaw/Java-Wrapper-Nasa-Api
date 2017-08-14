@@ -8,7 +8,7 @@ import org.json.simple.parser.JSONParser;
  * @author Jeremy L. Morris
  *
  */
-public class Patents {
+public class PatentsService {
 
 	/**
 	 * 

@@ -5,7 +5,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.junit.Test;
 
-import services.EpicNaturalImages;
+import services.EpicNaturalImagesService;
 
 /**
  * 
@@ -14,7 +14,7 @@ import services.EpicNaturalImages;
  */
 public class EpicNaturalImageTest {
 
-	private static final JSONArray epicJsonArray = EpicNaturalImages.getData();
+	private static final JSONArray epicJsonArray = EpicNaturalImagesService.getData();
 	private static final JSONObject json = (JSONObject) epicJsonArray.get(0);
 
 	@Test

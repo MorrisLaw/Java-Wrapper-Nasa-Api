@@ -13,7 +13,7 @@ import org.json.simple.parser.JSONParser;
  * @author Jeremy L. Morris
  *
  */
-public class EpicNaturalImages {
+public class EpicNaturalImagesService {
 
 	private static final JSONArray epicJsonObj = getData();
 	

@@ -2,9 +2,10 @@ package tests;
 
 import org.json.simple.JSONObject;
 import org.junit.Test;
-import static org.junit.Assert.assertTrue;
 
-import services.Apod;
+import models.ApodModel;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests for Apod service.
@@ -13,7 +14,7 @@ import services.Apod;
  */
 public class ApodTest {
 
-	public static final JSONObject apodObject = Apod.getData();
+	public static final JSONObject apodObject = ApodModel.getData();
 	
 	@Test
 	public void testGetDate() {

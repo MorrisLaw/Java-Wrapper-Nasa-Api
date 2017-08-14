@@ -11,7 +11,7 @@ import org.json.simple.parser.JSONParser;
  * @author Jeremy L. Morris
  *
  */
-public class NeoBrowse {
+public class NeoBrowseService {
 
 	private static final JSONObject neoBrowseJsonObj = getData();
 	private static final JSONObject page = (JSONObject) neoBrowseJsonObj.get("page");
