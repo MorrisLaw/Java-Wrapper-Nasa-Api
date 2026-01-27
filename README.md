@@ -81,4 +81,4 @@ Pull requests are welcome for the develop branch, as long as they are tested and
 ```git clone https://github.com/MorrisLaw/Java-Wrapper-Nasa-Api.git```
 
 ## Credits
-Jeremy L. Morris, jeremylevanmorris@gmail.com
+Jeremy L. Morris
